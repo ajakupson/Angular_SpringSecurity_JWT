@@ -1,4 +1,4 @@
-# Demo of Spring Boot application with Spring Security, JWT, Angular, Flyaway, PostgreSQL
+# Demo of Spring Boot application with Spring Security, JWT, Angular, Flyway, PostgreSQL
 
  ## Swagger:
 ![app](swagger.png)
