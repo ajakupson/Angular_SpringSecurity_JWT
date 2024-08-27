@@ -1,0 +1,39 @@
+version: "3.9"
+
+services:
+  smit_1_postgres:
+    image: 'postgres:latest'
+    environment:
+      - 'POSTGRES_DB=smit_1'
+      - 'POSTGRES_PASSWORD=smit_1'
+      - 'POSTGRES_USER=smit_1'
+    ports:
+      - '5432:5432'
+  backend:
+    build: 
+      context: ./smit_1_backend/
+      dockerfile: Dockerfile
+    volumes:
+      - ./smit_1_backend:/app
+      - ~/.m2:/root/.m2
+    ports:
+      - '8080:8080'
+    command: mvn spring-boot:run    
+    depends_on:
+      - smit_1_postgres
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://smit_1_postgres:5432/smit_1   
+  frontend:
+    build: 
+      context: ./smit_1_frontend/
+      dockerfile: Dockerfile 
+    volumes:
+      - ./smit_1_frontend:/app
+      - /app/node_modules
+    ports:
+      - '4200:4200'
+    command: ng serve --host 0.0.0.0 --poll=2000 
+    depends_on:
+      - backend
+    environment:
+      - CHOKIDAR_USEPOLLING=true  
