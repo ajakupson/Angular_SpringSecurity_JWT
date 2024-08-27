@@ -19,7 +19,7 @@ Easiest way to run:
  It will create container and images for backend, frontend, postgresql and apply migrations
  - 2. Navigating to http://localhost:8080/api/health_check to check is api is working
  - 3. Navigating to http://localhost:8080/swagger-ui/index.html to check swagger
- - 4. Navigating to http://localhost:4200/register to create a new user
+ - 4. Navigating to http://localhost:4200/signup to create a new user
  - 5. Navigate to http://localhost:4200/login to login
  - 6. Add books, reserve with different users
 
