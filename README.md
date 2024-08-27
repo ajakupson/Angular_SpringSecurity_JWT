@@ -17,7 +17,7 @@ Easiest way to run:
  docker compose up
  ```
  It will create container and images for backend, frontend, postgresql and apply migrations
- - 2. Navigating to http://localhost:8080/api/health_check to check is api is working
+ - 2. Navigating to http://localhost:8080/api/health_check to check is api working
  - 3. Navigating to http://localhost:8080/swagger-ui/index.html to check swagger
  - 4. Navigating to http://localhost:4200/signup to create a new user
  - 5. Navigate to http://localhost:4200/login to login
